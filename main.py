@@ -168,7 +168,7 @@ async def ping(ctx):
 
 
 # ------------ START INVITE ------------
-@client.command()
+@bot.command()
 async def invites(ctx, usr: discord.Member=None):
     if usr == None:
        user = ctx.author
@@ -182,7 +182,7 @@ async def invites(ctx, usr: discord.Member=None):
     await ctx.send(f"{user.name} has invited {totalInvites} member{'' if totalInvites == 1 else 's'}!")
 
 
-@client.command()
+@bot.command()
 async def leaderboard(ctx, x=10):
   with open('level.json', 'r') as f:
     
