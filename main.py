@@ -168,6 +168,8 @@ async def ping(ctx):
 
 
 # ------------ START INVITE ------------
+total_invites = 0
+
 @bot.command()
 async def invites(ctx, usr: discord.Member=None):
     if usr == None:
