@@ -431,13 +431,6 @@ async def rrall(ctx):
 
 
 # ------------ START ERRORS ------------
-@heist.error
-async def heist_error(ctx, error):
-    if isinstance(error, commands.MissingRole):
-        await ctx.channel.purge(limit=1)
-        await ctx.send("You don't have the required permissions to do that")
-
-
 # ------------ END ERRORS ------------
 TOKEN = os.environ.get("DISCORD_TOKEN")
 bot.run(TOKEN)
