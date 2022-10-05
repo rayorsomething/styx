@@ -168,19 +168,18 @@ async def ping(ctx):
 
 
 # ------------ START INVITE ------------
-total_invites = 0
-
+#totalInvites = 0
 @bot.command()
 async def invites(ctx, usr: discord.Member=None):
     if usr == None:
        user = ctx.author
     else:
        user = usr
-    total_invites = 0
-    guild_invites = ctx.guild.invites()
-    for i in await guild_invites:
+    totalInvites = 0
+    guildInvites = ctx.guild.invites()
+    for i in await guildInvites:
         if i.inviter == user:
-            total_invites += i.uses
+            totalInvites += i.uses
     await ctx.send(f"{user.name} has invited {totalInvites} member{'' if totalInvites == 1 else 's'}!")
 
 
